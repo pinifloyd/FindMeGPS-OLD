@@ -1,0 +1,22 @@
+<div id='top-bar'>
+  <div id='left-top-bar'>
+    <%= link_to '#', do %>
+      <div><span>There will be other links</span></div>
+    <% end %>
+  </div>
+
+  <div id='right-top-bar'>
+    <% if current_user %>
+      <%= link_to signout_path, :id => 'signout' do %>
+        <div><span>Sign Out</span></div>
+      <% end %>
+    <% else %>
+      <%= link_to '#', :id => 'signin' do %>
+        <div><span>Sign In</span></div>
+      <% end %>
+      <div id='signin-dropdown'>
+        <%= render 'shared/signin_dropdown' %>
+      </div>
+    <% end %>
+  </div>
+</div>

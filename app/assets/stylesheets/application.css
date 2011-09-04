@@ -5,3 +5,65 @@
  *= require_self
  *= require_tree . 
 */
+
+/* TOP BAR */
+#top-bar {
+  height: 30px;
+  background-color: #2D2D2D;
+  background-image: none;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+#top-bar a {
+  color: #CCC;
+  text-decoration: none;
+}
+
+#top-bar a div {
+  height: 30px;
+}
+
+#top-bar a span {
+  margin: 10px;
+  vertical-align: sub;
+}
+
+#top-bar a:hover div,
+#top-bar a.selected div {
+  background: white;
+  color: blue;
+  border: 1px solid white;
+  box-shadow: 0 0 10px white;
+}
+
+#top-bar #left-top-bar {
+  left: 0;
+  padding-left: 4px;
+  position: absolute;
+  white-space: nowrap;
+  top: 0;
+  height: 30px;
+}
+
+#top-bar #right-top-bar {
+  right: 0;
+  padding-right: 4px;
+  position: absolute;
+  white-space: nowrap;
+  top: 0;
+  height: 30px;
+}
+
+#top-bar #signin-dropdown {
+  display: none;
+  width: 254px;
+  position: absolute;
+  box-shadow: -5px 5px 5px #CCC;
+  border: 1px solid white;
+  background: white;
+  right: 0;
+  top: 30px;
+}

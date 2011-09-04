@@ -1,4 +1,13 @@
 FindMeGps::Application.routes.draw do
+  root :to => 'welcome#index'
+
+  match '/signup',  :to => 'users#new'
+  match '/signin',  :to => 'user_sessions#new'
+  match '/signout', :to => 'user_sessions#destroy'
+
+  resource  :user_sessions, :only => [:new, :create, :destroy]
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
