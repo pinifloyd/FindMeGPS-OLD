@@ -1,5 +1,22 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  site_title:       'FindMeGps'
+  require_user:     'You must be logged in to access this page!'
+  require_no_user:  'You must be logged out to access this page!'
+  login:            'Login successful!'
+  logout:           'Logout successful!'
+  account_created:  'Account registered!'
+  account_updated:  'Account updated!'
+  sign_in:          'Sign In'
+  sign_out:         'Sing Out'
+  register:         'Register'
+  edit:             'Edit'
+  update:           'Update'
+  my_profile:       'My profile'
+  change_password:  'Change password'
+  email:            'Email'
+  login_count:      'Login count'
+  last_request_at:  'Last request at'
+  last_login_at:    'Last login at'
+  current_login_at: 'Current login at'
+  last_login_ip:    'Last login ip'
+  current_login_ip: 'Current login ip'
