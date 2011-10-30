@@ -11,6 +11,13 @@ body {
   margin: 0;
 }
 
+input[type=text],
+input[type=password] {
+  border: 1px solid #AAA;
+  padding: 3px;
+  background-color: #DDD;
+}
+
 /* TOP BAR */
 #top-bar {
   height: 30px;
@@ -40,58 +47,75 @@ body {
   margin-top: 5px;
 }
 
-#top-bar-content li div {
+#top-bar-content div.top-bar-box-shadow {
   height: 28px;
 }
 
-#top-bar-content li div:hover,
-#top-bar-content li div.selected {
+#top-bar-content div.top-bar-box-shadow:hover,
+#top-bar-content div.top-bar-box-shadow.selected {
   background: white;
   border: 1px solid white;
   box-shadow: 0 0 10px white;
 }
 
-#top-bar-content li div:hover a,
-#top-bar-content li div.selected a {
+#top-bar-content div.top-bar-box-shadow:hover a,
+#top-bar-content div.top-bar-box-shadow.selected a {
   color: black;
 }
 
-#top-bar-content #top-bar-left,
-#top-bar-content #top-bar-right {
+#top-bar-left,
+#top-bar-right {
   top: 0;
   position: absolute;
   white-space: nowrap;
   height: 30px;
 }
 
-#top-bar-content #top-bar-left {
+#top-bar-left {
   left: 0;
   padding-left: 10px;
 }
 
-#top-bar-content #top-bar-left a {
+#top-bar-left a {
   margin-right: 10px;
   padding-left: 10px;
 }
 
-#top-bar-content #top-bar-right {
+#top-bar-right {
   right: 0;
   padding-right: 10px;
 }
 
-#top-bar-content #top-bar-right a {
+#top-bar-right a {
   margin-left: 10px;
   padding-right: 10px;
 }
 
-#top-bar-content #top-bar-right #signin-dropdown {
+/* SIGNIN DROPDOWN */
+#signin-dropdown {
   display: none;
-  width: 260px;
-  height: auto;
+  width: 290px;
   position: absolute;
   box-shadow: -5px 5px 5px #CCC;
   border: 1px solid white;
   background: white;
   right: 0;
   top: 30px;
+}
+
+#signin-dropdown form {
+  padding: 0 15px;
+}
+
+#signin-dropdown a.signin-dropdown-register {
+  display: inline;
+  color: blue;
+  margin-top: 0;
+  padding-right: 0;
+  margin-left: 80px;
+}
+
+#signin-dropdown input.signin-dropdown-submit {
+  width: 100%;
+  height: 25px;
 }

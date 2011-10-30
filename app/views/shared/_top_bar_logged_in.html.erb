@@ -1,10 +1,10 @@
 <ul>
   <div id='top-bar-left'>
-    <li><div><%= link_to 'Logged In Menu', '#' %></div></li>
-    <li><div><%= link_to 'There will be other links', '#' %></div></li>
+    <li><div class='top-bar-box-shadow'><%= link_to 'Logged In Menu', '#' %></div></li>
+    <li><div class='top-bar-box-shadow'><%= link_to 'There will be other links', '#' %></div></li>
   </div>
   <div id='top-bar-right'>
-    <li><div><%= link_to t(:sign_in), '#', id: 'signin' %></div></li>
+    <li><div class='top-bar-box-shadow'><%= link_to t(:sign_in), '#', id: 'signin' %></div></li>
     <li><div id='signin-dropdown'><%= render 'shared/signin_dropdown' %></div></li>
   </div>
 </ul>
