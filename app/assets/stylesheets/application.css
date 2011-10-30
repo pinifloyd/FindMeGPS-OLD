@@ -3,63 +3,91 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree . 
+ *= require_tree .
 */
+
+/* REGULAR */
+body {
+  margin: 0;
+}
 
 /* TOP BAR */
 #top-bar {
   height: 30px;
-  background-color: #2D2D2D;
-  background-image: none;
-  top: 0;
-  position: absolute;
-  width: 100%;
-  left: 0;
 }
 
-#top-bar a {
+#top-bar-content {
+  top: 0px;
+  height: 30px;
+  width: 100%;
+  background-color: #2D2D2D;
+  position: fixed;
+}
+
+#top-bar-content ul {
+  list-style: none;
+}
+
+#top-bar-content li {
+  display: inline;
+  float: left;
+}
+
+#top-bar-content a {
+  display: block;
   color: #CCC;
   text-decoration: none;
+  margin-top: 5px;
 }
 
-#top-bar a div {
-  height: 30px;
+#top-bar-content li div {
+  height: 28px;
 }
 
-#top-bar a span {
-  margin: 10px;
-  vertical-align: sub;
-}
-
-#top-bar a:hover div,
-#top-bar a.selected div {
+#top-bar-content li div:hover,
+#top-bar-content li div.selected {
   background: white;
-  color: blue;
   border: 1px solid white;
   box-shadow: 0 0 10px white;
 }
 
-#top-bar #left-top-bar {
+#top-bar-content li div:hover a,
+#top-bar-content li div.selected a {
+  color: black;
+}
+
+#top-bar-content #top-bar-left,
+#top-bar-content #top-bar-right {
+  top: 0;
+  position: absolute;
+  white-space: nowrap;
+  height: 30px;
+}
+
+#top-bar-content #top-bar-left {
   left: 0;
-  padding-left: 4px;
-  position: absolute;
-  white-space: nowrap;
-  top: 0;
-  height: 30px;
+  padding-left: 10px;
 }
 
-#top-bar #right-top-bar {
+#top-bar-content #top-bar-left a {
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+#top-bar-content #top-bar-right {
   right: 0;
-  padding-right: 4px;
-  position: absolute;
-  white-space: nowrap;
-  top: 0;
-  height: 30px;
+  padding-right: 10px;
 }
 
-#top-bar #signin-dropdown {
+#top-bar-content #top-bar-right a {
+  margin-left: 10px;
+  padding-right: 10px;
+}
+
+#top-bar-content #top-bar-right #signin-dropdown {
   display: none;
-  width: 254px;
+  width: 260px;
+  height: auto;
   position: absolute;
   box-shadow: -5px 5px 5px #CCC;
   border: 1px solid white;

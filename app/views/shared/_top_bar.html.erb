@@ -1,22 +1,9 @@
 <div id='top-bar'>
-  <div id='left-top-bar'>
-    <%= link_to '#', do %>
-      <div><span>There will be other links</span></div>
-    <% end %>
-  </div>
-
-  <div id='right-top-bar'>
+  <div id='top-bar-content'>
     <% if current_user %>
-      <%= link_to signout_path, :id => 'signout' do %>
-        <div><span><%= t(:sign_out) %></span></div>
-      <% end %>
+      <%= render partial: 'shared/top_bar_logged_out' %>
     <% else %>
-      <%= link_to '#', :id => 'signin' do %>
-        <div><span><%= t(:sign_in) %></span></div>
-      <% end %>
-      <div id='signin-dropdown'>
-        <%= render 'shared/signin_dropdown' %>
-      </div>
+      <%= render partial: 'shared/top_bar_logged_in' %>
     <% end %>
   </div>
 </div>

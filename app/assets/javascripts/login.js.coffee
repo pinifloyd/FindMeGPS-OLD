@@ -3,9 +3,8 @@ $(document).ready ->
   signInDropdown = $('#signin-dropdown')
 
   signIn.toggle (->
-    console.log(signIn)
-    signIn.addClass('selected')
+    signIn.closest('div').addClass('selected')
     signInDropdown.slideDown()
   ), ->
     signInDropdown.slideUp ->
-      signIn.removeClass('selected')
+      signIn.closest('div').removeClass('selected')
