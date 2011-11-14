@@ -8,7 +8,7 @@
     <%= password_field :user_session, :password %>
   </p>
 
-  <hr noshade color='#CCC' />
+  <div class='separator'></div>
 
   <p>
     <%= check_box :user_session, :remember_me, checked: true %>
@@ -16,7 +16,9 @@
     <%= link_to t(:register), signup_path, class: 'signin-dropdown-register' %>
   </p>
 
+  <div class='separator'></div>
+
   <p>
-    <%= submit_tag t(:sign_in), class: 'signin-dropdown-submit' %>
+    <%= submit_tag t(:sign_in) %>
   </p>
 <% end %>

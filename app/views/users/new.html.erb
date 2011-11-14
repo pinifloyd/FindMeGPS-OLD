@@ -1,11 +1,19 @@
-<fieldset>
-  <legend>
-    <h1><%= t(:register) %></h1>
-  </legend>
+<div id='registration-form'>
+  <fieldset>
+    <legend>
+      <h1><%= t(:registration_form) %></h1>
+    </legend>
 
-  <%= form_for @user do |f| %>
-    <%= f.error_messages %>
-    <%= render :partial => 'form', :object => f %>
-    <%= f.submit t(:register) %>
-  <% end %>
-</fieldset>
+    <div class='separator'></div>
+
+    <%= form_for @user do |f| %>
+      <%= f.error_messages %>
+
+      <%= render :partial => 'form', :object => f %>
+
+      <div class='separator'></div>
+
+      <p><%= f.submit t(:submit) %></p>
+    <% end %>
+  </fieldset>
+</div>

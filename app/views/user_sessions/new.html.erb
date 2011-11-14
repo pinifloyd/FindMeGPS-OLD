@@ -1,12 +1,34 @@
-<h1><%= t(:sign_in) %></h1>
-<%= form_for @user_session, :url => user_sessions_path do |f| %>
-  <%= f.label :email %><br />
-  <%= f.text_field :email %><br />
-  <br />
-  <%= f.label :password %><br />
-  <%= f.password_field :password %><br />
-  <br />
-  <%= f.check_box :remember_me %><%= f.label :remember_me %><br />
-  <br />
-  <%= f.submit t(:sign_in) %>
-<% end %>
+<div id='registration-form'>
+  <fieldset>
+    <legend>
+      <h1><%= t(:sign_in) %></h1>
+    </legend>
+
+    <div class='separator'></div>
+
+    <%= form_for @user_session, url: user_sessions_path do |f| %>
+      <p>
+        <%= f.label :email %><br />
+        <%= f.text_field :email %>
+      </p>
+      <p>
+        <%= f.label :password %><br />
+        <%= f.password_field :password %>
+      </p>
+
+      <div class='separator'></div>
+
+      <p>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+        <%= link_to t(:register), signup_path, class: 'registration-form-register' %>
+      </p>
+
+      <div class='separator'></div>
+
+      <p>
+        <%= f.submit t(:sign_in) %>
+      </p>
+    <% end %>
+  </fieldset>
+</div>
