@@ -1,6 +1,11 @@
-<h1><%= t(:register) %></h1>
+<fieldset>
+  <legend>
+    <h1><%= t(:register) %></h1>
+  </legend>
 
-<%= form_for @user do |f| %>
-  <%= render :partial => 'form', :object => f %>
-  <%= f.submit t(:register) %>
-<% end %>
+  <%= form_for @user do |f| %>
+    <%= f.error_messages %>
+    <%= render :partial => 'form', :object => f %>
+    <%= f.submit t(:register) %>
+  <% end %>
+</fieldset>
