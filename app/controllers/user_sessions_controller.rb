@@ -1,9 +1,10 @@
 class UserSessionsController < ApplicationController
-  before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => :destroy
+  before_filter :require_no_user, only: [:new, :create]
+  before_filter :require_user, only: :destroy
 
   def new
     @user_session = UserSession.new
+    flash[:error] = nil
   end
 
   def create
@@ -12,7 +13,8 @@ class UserSessionsController < ApplicationController
       flash[:notice] = t(:login)
       redirect_to root_path
     else
-      render :action => :new
+      flash[:error] = t(:user_session_error)
+      render :new
     end
   end
 

@@ -4,7 +4,15 @@
       <h1><%= t(:sign_in) %></h1>
     </legend>
 
-    <div class='separator'></div>
+    <% if flash[:error] %>
+      <div class='separator error'></div>
+      <p class='error'>
+        <%= flash[:error] %>
+      </p>
+      <div class='separator error'></div>
+    <% else %>
+      <div class='separator'></div>
+    <% end %>
 
     <%= form_for @user_session, url: user_sessions_path do |f| %>
       <p>

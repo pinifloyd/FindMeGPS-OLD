@@ -25,6 +25,21 @@ div.separator {
   width: 100%;
 }
 
+div.separator.error {
+  background: red;
+}
+
+span.required-field,
+span.formError {
+  color: red;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+span.field_with_errors input {
+  border: 1px solid red;
+}
+
 /* TOP BAR */
 #top-bar {
   height: 30px;

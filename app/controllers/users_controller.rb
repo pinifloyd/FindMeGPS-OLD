@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :load_user, :only => [:show, :edit, :update]
+  before_filter :require_no_user, only: [:new, :create]
+  before_filter :require_user, :load_user, only: [:show, :edit, :update]
 
   def new
     @user = User.new
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       flash[:notice] = t(:account_created)
       redirect_to user_path(@user)
     else
-      render :action => :new
+      render :new
     end
   end
 
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       flash[:notice] = t(:account_updated)
       redirect_to user_path(@user)
     else
-      render :action => :edit
+      render :edit
     end
   end
 
