@@ -1,9 +1,9 @@
 <div id='top-bar'>
   <div id='top-bar-content'>
     <% if current_user %>
-      <%= render partial: 'shared/top_bar_logged_out' %>
-    <% else %>
       <%= render partial: 'shared/top_bar_logged_in' %>
+    <% else %>
+      <%= render partial: 'shared/top_bar_logged_out' %>
     <% end %>
   </div>
 </div>

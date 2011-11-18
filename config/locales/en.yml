@@ -21,4 +21,4 @@ en:
   current_login_at:   'Current login at'
   last_login_ip:      'Last login ip'
   current_login_ip:   'Current login ip'
-  user_session_error: "Email/Password isn't valid. Try again."
+  user_session_error: 'Invalid Email/Password combination.'
