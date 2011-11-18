@@ -1,7 +1,7 @@
 #registration-form {
   margin: 0 auto;
   padding-top: 10%;
-  width: 264px;
+  width: 290px;
 }
 
 #registration-form fieldset {
@@ -18,11 +18,16 @@
   height: 25px;
 }
 
+#registration-form input[type=text],
+#registration-form input[type=password] {
+  width: 252px;
+}
+
 #registration-form a.registration-form-register {
   display: inline;
   color: blue;
   margin-top: 0;
   padding-right: 0;
-  margin-left: 80px;
+  margin-left: 60px;
   text-decoration: none;
 }

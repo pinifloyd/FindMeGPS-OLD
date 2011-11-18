@@ -7,6 +7,14 @@
 */
 
 /* REGULAR */
+* {
+  font-family: 'Podkova', sans-serif;
+}
+
+input[type=submit] {
+  font-size: 1em;
+}
+
 body {
   margin: 0;
 }
@@ -116,7 +124,7 @@ span.field_with_errors input {
 /* SIGNIN DROPDOWN */
 #signin-dropdown {
   display: none;
-  width: 290px;
+  width: 260px;
   position: absolute;
   box-shadow: -5px 5px 5px #CCC;
   border: 1px solid white;
@@ -134,7 +142,7 @@ span.field_with_errors input {
   color: blue;
   margin-top: 0;
   padding-right: 0;
-  margin-left: 80px;
+  margin-left: 30px;
 }
 
 #signin-dropdown input[type=submit] {
