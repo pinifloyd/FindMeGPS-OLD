@@ -1,12 +1,13 @@
 FindMeGps::Application.routes.draw do
   root :to => 'welcome#index'
 
-  match 'users/new' => 'users#new', :as => '/signup'
-  match '/signin',  :to => 'user_sessions#new'
-  match '/signout', :to => 'user_sessions#destroy'
+  match 'users/new' => 'users#new', as: '/signup'
+  match '/signin',  to: 'user_sessions#new'
+  match '/signout', to: 'user_sessions#destroy'
 
-  resource  :user_sessions, :only => [:new, :create, :destroy]
-  resources :users
+  resources :users, only: [:new, :create, :edit, :update]
+  resource  :user_sessions, only: [:new, :create, :destroy]
+  resource  :maps, only: :show
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
