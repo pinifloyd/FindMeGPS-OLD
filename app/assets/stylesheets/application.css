@@ -26,30 +26,31 @@ input[type=submit] {
 
 input[type=text],
 input[type=password] {
+  font-size: 1em;
   border: 1px solid #AAA;
   padding: 3px;
   background-color: #DDD;
 }
 
-div.separator {
+div.css-separator {
   background: #CCC;
   font-size: 1px;
   height: 2px;
   width: 100%;
 }
 
-div.separator.error {
+div.css-separator.css-error {
   background: red;
 }
 
-span.required-field,
+span.css-required-field,
 span.formError {
   color: red;
   font-size: 0.9em;
   font-style: italic;
 }
 
-span.field_with_errors input {
+span.css-field-with-errors input {
   border: 1px solid red;
 }
 
@@ -82,19 +83,19 @@ span.field_with_errors input {
   margin-top: 5px;
 }
 
-#top-bar-content div.top-bar-box-shadow {
+#top-bar-content div.css-box-shadow {
   height: 28px;
 }
 
-#top-bar-content div.top-bar-box-shadow:hover,
-#top-bar-content div.top-bar-box-shadow.selected {
+#top-bar-content div.css-box-shadow:hover,
+#top-bar-content div.css-box-shadow.selected {
   background: white;
   border: 1px solid white;
   box-shadow: 0 0 10px white;
 }
 
-#top-bar-content div.top-bar-box-shadow:hover a,
-#top-bar-content div.top-bar-box-shadow.selected a {
+#top-bar-content div.css-box-shadow:hover a,
+#top-bar-content div.css-box-shadow.selected a {
   color: black;
 }
 
@@ -142,7 +143,7 @@ span.field_with_errors input {
   padding: 0 15px;
 }
 
-#signin-dropdown a.signin-dropdown-register {
+#signin-dropdown a.css-register {
   display: inline;
   color: blue;
   margin-top: 0;

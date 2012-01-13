@@ -35,7 +35,7 @@ module FindMeGps
 
     # Errors
     config.action_view.field_error_proc = Proc.new do |html_tag, instance|
-      "<span class='field_with_errors'>#{html_tag}</span>".html_safe
+      "<span class='css-field-with-errors'>#{html_tag}</span>".html_safe
     end
 
     # Configure the default encoding used in templates for Ruby 1.9.

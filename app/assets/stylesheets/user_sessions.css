@@ -1,9 +1,9 @@
-#registration-form.signin p.error {
+#registration-form.css-signin p.css-error {
   color: red;
   text-align: center;
 }
 
-#registration-form.signin span.field_with_errors input,
-#signin-dropdown span.field_with_errors input {
+#registration-form.css-signin span.css-field-with-errors input,
+#signin-dropdown span.css-field-with-errors input {
   border: 1px solid #AAA;
 }

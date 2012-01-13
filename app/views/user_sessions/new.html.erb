@@ -1,18 +1,10 @@
-<div id='registration-form' class='signin'>
+<div id='registration-form' class='css-signin'>
   <fieldset>
     <legend>
       <h1><%= t(:sign_in) %></h1>
     </legend>
 
-    <% if flash[:error] %>
-      <div class='separator error'></div>
-      <p class='error'>
-        <%= flash[:error] %>
-      </p>
-      <div class='separator error'></div>
-    <% else %>
-      <div class='separator'></div>
-    <% end %>
+    <%= form_notice(:error) %>
 
     <%= form_for @user_session, url: user_sessions_path do |f| %>
       <p>
@@ -24,15 +16,15 @@
         <%= f.password_field :password %>
       </p>
 
-      <div class='separator'></div>
+      <%= separator %>
 
       <p>
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
-        <%= link_to t(:register), signup_path, class: 'registration-form-register' %>
+        <%= link_to t(:register), signup_path, class: 'css-register' %>
       </p>
 
-      <div class='separator'></div>
+      <%= separator %>
 
       <p>
         <%= f.submit t(:sign_in) %>

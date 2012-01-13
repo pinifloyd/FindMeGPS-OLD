@@ -8,15 +8,15 @@
     <%= password_field :user_session, :password %>
   </p>
 
-  <div class='separator'></div>
+  <%= separator %>
 
   <p>
     <%= check_box :user_session, :remember_me, checked: true %>
     <%= label :user_session, :remember_me %>
-    <%= link_to t(:register), signup_path, class: 'signin-dropdown-register' %>
+    <%= link_to t(:register), signup_path, class: 'css-register' %>
   </p>
 
-  <div class='separator'></div>
+  <%= separator %>
 
   <p>
     <%= submit_tag t(:sign_in) %>

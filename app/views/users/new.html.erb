@@ -4,12 +4,12 @@
       <h1><%= t(:registration_form) %></h1>
     </legend>
 
-    <div class='separator'></div>
+    <%= separator %>
 
     <%= form_for @user do |f| %>
       <%= render partial: 'form', object: f %>
 
-      <div class='separator'></div>
+      <%= separator %>
 
       <p><%= f.submit t(:submit) %></p>
     <% end %>
