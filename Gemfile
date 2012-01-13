@@ -13,7 +13,7 @@ gem 'jquery-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'sass-rails',   "~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
@@ -24,6 +24,7 @@ group :development do
 end
 
 group :test do
-  # Pretty printed test output
   gem 'turn', :require => false
+  gem 'factory_girl_rails', '~> 1.2'
+  gem 'rspec-rails',        '~> 2.6'
 end
