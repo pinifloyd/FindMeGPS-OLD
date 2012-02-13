@@ -9,7 +9,12 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <div id='head_inline_javascripts'>
+      <%= yield :head_inline_javascripts %>
+    </div>
+
     <%= render 'shared/top_bar' %>
+
     <%= yield %>
   </body>
 </html>
