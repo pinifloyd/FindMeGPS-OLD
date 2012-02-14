@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-FindMeGps::Application.config.secret_token = '0128a9ee5ee52dc2bb07f4f1f05b727fda9db8cea7d9f71729e7ff6466ac4e0682b63863825fdbbd2e9119a4527616201b2827af9449f5b6c58cd93e6548b1f7'
+FindMeGps::Application.config.secret_token = '551dee5d0330db20310e5e2cca5f19dc4cbbb809b29abbf0cb7854feead4ce42fd35f67661eb5958e71ee5b0324fc21c87733f770c10a37615c9f560ca771fe6'
