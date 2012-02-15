@@ -17,6 +17,9 @@ end
 
 # Gems used only for development environment
 group :development do
+  gem 'awesome_print'
+  gem 'hirb'
+  gem 'wirble'
   gem 'thin'
 end
 
