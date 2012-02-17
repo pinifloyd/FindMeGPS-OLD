@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user       = User.new(params[:user])
+    @user.roles = Role.default_role
+
     if @user.save
       flash[:notice] = t(:account_created)
       redirect_to user_path(@user)

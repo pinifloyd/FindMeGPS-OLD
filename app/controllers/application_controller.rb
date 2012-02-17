@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
+
   helper_method :current_user_session, :current_user
+
+  before_filter :set_current_user
+
+  filter_access_to :all
 
   protect_from_forgery
 
@@ -27,5 +32,11 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
       return false
     end
+  end
+
+  protected
+
+  def set_current_user
+    Authorization.current_user = current_user
   end
 end

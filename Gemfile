@@ -6,6 +6,7 @@ gem 'authlogic'
 gem 'execjs'
 gem 'therubyracer'
 gem 'jquery-rails'
+gem 'declarative_authorization'
 
 # Gems used only for assets and not required
 # in production environments by default.
