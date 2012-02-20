@@ -9,6 +9,10 @@ FindMeGps::Application.routes.draw do
   resources :users, except: [ :index, :destroy ]
   resource  :user_sessions, only: [ :new, :create, :destroy ]
 
+  namespace :admin do
+    resource :welcome, only: :show
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

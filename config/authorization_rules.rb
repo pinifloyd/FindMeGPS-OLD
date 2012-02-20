@@ -18,6 +18,10 @@ authorization do
     includes :user
     has_permission_on :maps, to: :show
   end
+
+  role :admin do
+    has_omnipotence
+  end
 end
 
 privileges do

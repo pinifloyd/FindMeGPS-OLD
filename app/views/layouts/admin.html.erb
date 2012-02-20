@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t(:site_title) %></title>
+    <%= stylesheet_link_tag 'admin/application' %>
+    <%= stylesheet_link_tag 'http:://fonts.googleapis.com/css?family=Podkova' %>
+
+    <%= javascript_include_tag 'admin/application' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div id='head_inline_javascriipts'>
+      <%= yield :head_inline_javascripts %>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>
