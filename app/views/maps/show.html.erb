@@ -1,10 +1,11 @@
 <% content_for :head_inline_javascripts do %>
-  <%= javascript_include_tag 'maps.js' %>
   <%= javascript_include_tag 'http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places' %>
   <%= javascript_include_tag 'http://code.google.com/apis/gears/gears_init.js' %>
 <% end %>
 
-<div id='left-side-bar' style='min-width: 350px; float: left;'>test</div>
+<div id='left-side-bar' style='min-width: 350px; float: left;'>
+  <%= text_field_tag :search, nil, placeholder: 'Enter your city here...', size: 40 %>
+</div>
 
 <div id='page' style='min-height: 500px; height: 80%;'>
   <div id='google-map' style='min-width: 650px; height: 100%;'></div>
