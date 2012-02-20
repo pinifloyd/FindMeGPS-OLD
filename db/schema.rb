@@ -16,10 +16,8 @@ ActiveRecord::Schema.define(:version => 20120220155646) do
   create_table "device_locations", :force => true do |t|
     t.float    "lat",         :null => false
     t.float    "lng",         :null => false
-    t.integer  "number",      :null => false
     t.float    "temperature"
     t.integer  "battery"
-    t.string   "name"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
