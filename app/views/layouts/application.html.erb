@@ -3,9 +3,11 @@
   <head>
     <title><%= t(:site_title) %></title>
     <%= stylesheet_link_tag :application %>
+    <%= stylesheet_link_tag params[:controller] %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Podkova' %>
 
     <%= javascript_include_tag :application %>
+    <%= javascript_include_tag params[:controller] %>
     <%= csrf_meta_tags %>
   </head>
   <body>

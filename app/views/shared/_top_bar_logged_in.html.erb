@@ -4,9 +4,12 @@
     <% permitted_to? :show, :maps do %>
       <li><div class='css-box-shadow'><%= link_to 'Map', map_path %></div></li>
     <% end %>
-    <li><div class='css-box-shadow'><%= link_to 'My Profile', user_path(current_user) %></div></li>
   </div>
   <div id='top-bar-right'>
+    <% permitted_to? :read, :admin_welcomes do %>
+      <li><div class='css-box-shadow'><%= link_to 'CMS', admin_welcome_path %></div></li>
+    <% end %>
+    <li><div class='css-box-shadow'><%= link_to 'My Profile', user_path(current_user) %></div></li>
     <li><div class='css-box-shadow'><%= link_to t(:sign_out), signout_path, id: 'signout' %></div></li>
   </div>
 </ul>

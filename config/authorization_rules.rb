@@ -20,6 +20,8 @@ authorization do
   end
 
   role :admin do
+    # for all admin need include this privilege
+    # has_permission_on :admin_welcomes, to: :read
     has_omnipotence
   end
 end
