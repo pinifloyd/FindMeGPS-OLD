@@ -1,0 +1,19 @@
+<fieldset>
+  <legend><h2><%= @device.name %></h2></legend>
+
+  <p>
+    <strong><%= t('devices.number') %>:</strong> <%= @device.number %>
+  </p>
+</fieldset>
+
+<div class='css-submit'>
+  <%= link_to(edit_admin_device_path(@device)) do %>
+    <input type='button' value="<%= t('base.edit') %>">
+  <% end %>
+
+  <%= t('base.or') %>
+
+  <%= link_to(admin_devices_path) do %>
+    <input type='button' value="<%= t('base.back') %>">
+  <% end %>
+</div>

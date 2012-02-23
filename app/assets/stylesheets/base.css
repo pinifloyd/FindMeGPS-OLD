@@ -1,6 +1,7 @@
 /* REGULAR */
 * {
   font-family: 'Podkova', sans-serif;
+  text-decoration: none;
 }
 
 html {
@@ -12,13 +13,12 @@ body {
   margin: 0;
 }
 
-input[type=submit] {
+input {
   font-size: 1em;
 }
 
 input[type=text],
 input[type=password] {
-  font-size: 1em;
   border: 1px solid #AAA;
   padding: 3px;
   background-color: #DDD;

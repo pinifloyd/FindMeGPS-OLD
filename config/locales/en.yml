@@ -22,3 +22,21 @@ en:
   last_login_ip:      'Last login ip'
   current_login_ip:   'Current login ip'
   user_session_error: 'Invalid Email/Password combination.'
+
+  base:
+    or:               'Or'
+    create:           'Create'
+    update:           'Update'
+    cancel:           'Cancel'
+    edit:             'Edit'
+    delete:           'Delete'
+    actions:          'Actions'
+    back:             'Back'
+
+  devices:
+    name:             'Device name'
+    number:           'Device number'
+    add_new_device:   'Add new device'
+    all_devices:      'All devices:'
+    edit_device:      'Edit device'
+    not_found:        'There is no found any devices.'

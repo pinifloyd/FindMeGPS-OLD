@@ -1,0 +1,35 @@
+<div class='css-pre-table'>
+  <h1><%= t('devices.all_devices') %></h1>
+
+  <%= link_to(new_admin_device_path, class: 'css-new') do %>
+    <input type='button' value="<%= t('devices.add_new_device') %>">
+  <% end %>
+</div>
+
+<table class='css-admin'>
+  <thead>
+    <tr>
+      <th><%= t('devices.name') %></th>
+      <th><%= t('devices.number') %></th>
+      <th><%= t('base.actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @devices %>
+      <% @devices.each do |device| %>
+        <tr>
+          <td><%= link_to device.name, admin_device_path(device) %></td>
+          <td><%= device.number %></td>
+          <td class='css-actions js-actions'>
+            <%= link_to t('base.edit'), edit_admin_device_path(device) %>
+            <%= link_to t('base.delete'), admin_device_path(device), method: :delete, class: 'js-destroy' %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan='3'><%= t('devices.not_found') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,10 +1,69 @@
 /* REGULAR */
 * {
   font-family: 'Podkova', sans-serif;
+  text-decoration: none;
 }
 
 body {
   margin: 0;
+}
+
+input {
+  font-size: 1em;
+  border: 1px solid #AAA;
+  background-color: #DDD;
+}
+
+span.css-required-field,
+span.formError {
+  color: red;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+span.css-field-with-errors input {
+  border: 1px solid red;
+}
+
+div.css-pre-table a.css-new {
+  float: right;
+  margin-top: -50px;
+  padding-right: 25px;
+  text-decoration: none;
+}
+
+table.css-admin {
+  width: 100%;
+  border-spacing: 0;
+}
+
+table.css-admin th {
+  background-color: #CDCDCD;
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px 10px;
+  text-shadow: 1px 1px 0 #EFEFEF;
+}
+
+table.css-admin td {
+  border-bottom: 1px solid #DDDDDD;
+  padding: 5px 10px;
+}
+
+table.css-admin td.css-actions {
+  text-align: right;
+}
+
+fieldset.css-admin {
+  margin-top: 20px;
+}
+
+fieldset.css-admin p {
+  padding: 0px 10px 20px;
+}
+
+div.css-submit {
+  padding: 22px;
 }
 
 /* TOP BAR */
