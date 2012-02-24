@@ -1,36 +1,36 @@
 <p>
-  <b><%= t(:email) %>:</b>
+  <b><%= t('users.email') %>:</b>
   <%= @user.email %>
 </p>
 
 <p>
-  <b><%= t(:login_count) %>:</b>
+  <b><%= t('users.login_count') %>:</b>
   <%= @user.login_count %>
 </p>
 
 <p>
-  <b><%= t(:last_request_at) %>:</b>
+  <b><%= t('users.last_request_at') %>:</b>
   <%= @user.last_request_at %>
 </p>
 
 <p>
-  <b><%= t(:last_login_at) %>:</b>
+  <b><%= t('users.last_login_at') %>:</b>
   <%= @user.last_login_at %>
 </p>
 
 <p>
-  <b><%= t(:current_login_at) %>:</b>
+  <b><%= t('users.current_login_at') %>:</b>
   <%= @user.current_login_at %>
 </p>
 
 <p>
-  <b><%= t(:last_login_ip) %>:</b>
+  <b><%= t('users.last_login_ip') %>:</b>
   <%= @user.last_login_ip %>
 </p>
 
 <p>
-  <b><%= t(:current_login_ip) %>:</b>
+  <b><%= t('users.current_login_ip') %>:</b>
   <%= @user.current_login_ip %>
 </p>
 
-<%= link_to t(:edit), edit_user_path(@user) %>
+<%= link_to t('base.edit'), edit_user_path(@user) %>

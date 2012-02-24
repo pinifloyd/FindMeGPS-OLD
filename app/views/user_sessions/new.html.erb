@@ -1,7 +1,7 @@
 <div id='registration-form' class='css-signin'>
   <fieldset>
     <legend>
-      <h1><%= t(:sign_in) %></h1>
+      <h1><%= t('top_bar.sign_in') %></h1>
     </legend>
 
     <%= form_notice(:error) %>
@@ -21,13 +21,13 @@
       <p>
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
-        <%= link_to t(:register), signup_path, class: 'css-register' %>
+        <%= link_to t('top_bar.register'), signup_path, class: 'css-register' %>
       </p>
 
       <%= separator %>
 
       <p>
-        <%= f.submit t(:sign_in) %>
+        <%= f.submit t('top_bar.sign_in') %>
       </p>
     <% end %>
   </fieldset>

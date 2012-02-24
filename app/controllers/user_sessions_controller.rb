@@ -10,17 +10,17 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = t(:login)
+      flash[:notice] = t('user_session.login')
       redirect_to root_path
     else
-      flash[:error] = t(:user_session_error)
+      flash[:error] = t('user_session.error')
       render :new
     end
   end
 
   def destroy
     current_user_session.destroy
-    flash[:notice] = t(:logout)
+    flash[:notice] = t('user_session.logout')
     redirect_to root_path
   end
 end

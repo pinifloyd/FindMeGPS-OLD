@@ -1,8 +1,8 @@
-<h1><%= t(:edit) %></h1>
+<h1><%= t('base.edit') %></h1>
 
 <%= form_for @user do |f| %>
   <%= render :partial => 'form', :object => f %>
-  <%= f.submit t(:update) %>
+  <%= f.submit t('base.update') %>
 <% end %>
 
-<br /><%= link_to t(:my_profile), user_path(@user) %>
+<br /><%= link_to t('users.my_profile'), user_path(@user) %>

@@ -13,12 +13,12 @@
   <p>
     <%= check_box :user_session, :remember_me, checked: true %>
     <%= label :user_session, :remember_me %>
-    <%= link_to t(:register), signup_path, class: 'css-register' %>
+    <%= link_to t('top_bar.register'), signup_path, class: 'css-register' %>
   </p>
 
   <%= separator %>
 
   <p>
-    <%= submit_tag t(:sign_in) %>
+    <%= submit_tag t('top_bar.sign_in') %>
   </p>
 <% end %>

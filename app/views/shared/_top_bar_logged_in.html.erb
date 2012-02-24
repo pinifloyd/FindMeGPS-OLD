@@ -1,15 +1,15 @@
 <ul>
   <div id='top-bar-left'>
-    <li><div class='css-box-shadow'><%= link_to 'Main', root_path %></div></li>
+    <li><div class='css-box-shadow'><%= link_to t('top_bar.main'), root_path %></div></li>
     <% permitted_to? :show, :maps do %>
-      <li><div class='css-box-shadow'><%= link_to 'Map', map_path %></div></li>
+      <li><div class='css-box-shadow'><%= link_to t('top_bar.map'), map_path %></div></li>
     <% end %>
   </div>
   <div id='top-bar-right'>
     <% permitted_to? :read, :admin_welcomes do %>
-      <li><div class='css-box-shadow'><%= link_to 'CMS', admin_welcome_path %></div></li>
+      <li><div class='css-box-shadow'><%= link_to t('top_bar.cms'), admin_welcome_path %></div></li>
     <% end %>
-    <li><div class='css-box-shadow'><%= link_to 'My Profile', user_path(current_user) %></div></li>
-    <li><div class='css-box-shadow'><%= link_to t(:sign_out), signout_path, id: 'signout' %></div></li>
+    <li><div class='css-box-shadow'><%= link_to t('top_bar.my_profile'), user_path(current_user) %></div></li>
+    <li><div class='css-box-shadow'><%= link_to t('top_bar.sign_out'), signout_path, id: 'signout' %></div></li>
   </div>
 </ul>

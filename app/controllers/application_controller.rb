@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
     unless current_user
-      flash[:notice] = t(:require_user)
+      flash[:notice] = t('users.require_user')
       redirect_to signin_path
       return false
     end
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 
   def require_no_user
     if current_user
-      flash[:notice] = t(:require_no_user)
+      flash[:notice] = t('users.require_no_user')
       redirect_to root_url
       return false
     end

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user.roles = Role.default_role
 
     if @user.save
-      flash[:notice] = t(:account_created)
+      flash[:notice] = t('users.account_created')
       redirect_to user_path(@user)
     else
       render :new
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(params[:user])
-      flash[:notice] = t(:account_updated)
+      flash[:notice] = t('users.account_updated')
       redirect_to user_path(@user)
     else
       render :edit
