@@ -12,6 +12,7 @@ FindMeGps::Application.routes.draw do
   namespace :admin do
     resource  :welcome, only: :show
     resources :devices
+    resources :users
   end
 
   # The priority is based upon order of creation:

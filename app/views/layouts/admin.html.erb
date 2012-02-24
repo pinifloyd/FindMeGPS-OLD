@@ -4,6 +4,7 @@
     <title><%= t('base.site_title') %></title>
     <%= stylesheet_link_tag 'admin/application' %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Podkova' %>
+    <%= stylesheet_link_tag params[:controller] %>
 
     <%= javascript_include_tag 'admin/application' %>
     <%= csrf_meta_tags %>

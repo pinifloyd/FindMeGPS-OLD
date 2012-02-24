@@ -1,0 +1,17 @@
+#column-left {
+  float: left;
+  min-width: 400px;
+}
+
+#column-right {
+  float: left;
+  min-width: 300px;
+}
+
+#column-right fieldset {
+  margin-top: 35px;
+}
+
+#column-right fieldset li {
+  padding: 8px;
+}

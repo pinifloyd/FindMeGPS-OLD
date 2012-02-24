@@ -1,0 +1,30 @@
+<div id='column-left'>
+  <p>
+    <%= f.label :email, t('users.email') %><br />
+    <%= f.email_field :email %><br />
+    <%= f.error_message_on :email, html_tag: 'span' %>
+  </p>
+
+  <p>
+    <%= f.label :password, t('users.password') %><br />
+    <%= f.password_field :password %><br />
+    <%= f.error_message_on :password, html_tag: 'span' %>
+  </p>
+
+  <p>
+    <%= f.label :password_confiramtion, t('users.password_confirmation') %><br />
+    <%= f.password_field :password_confirmation %><br />
+    <%= f.error_message_on :password_confirmation, html_tag: 'span' %>
+  </p>
+</div>
+
+<div id='column-right'>
+  <fieldset>
+    <ul>
+      <%= f.label :roles, t('users.available_roles') %><br />
+      <% @roles.each do |role| %>
+        <%= available_user_role(role, f.object.role_ids) %>
+      <% end %>
+    </ul>
+  </fieldset>
+</div>
