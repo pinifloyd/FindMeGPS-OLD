@@ -1,8 +1,19 @@
-<h1><%= t('base.edit') %></h1>
+<div class='row'>
+  <div class='span4 offset4'>
+    <fieldset>
 
-<%= form_for @user do |f| %>
-  <%= render :partial => 'form', :object => f %>
-  <%= f.submit t('base.update') %>
-<% end %>
+      <%= form_for @user, builder: BootStrapFormBuilder, html: { class: 'form-horizontal' } do |f| %>
+        <legend><%= t('users.edit_form') %></legend>
 
-<br /><%= link_to t('users.my_profile'), user_path(@user) %>
+        <%= render partial: 'form', object: f %>
+
+        <div class='form-actions'>
+          <%= f.submit t('base.update'), class: 'btn btn-primary btn-large' %>
+          <%= link_to t('base.cancel'), user_path(@user), class: 'btn' %>
+        </div>
+      <% end %>
+
+    </fieldset>
+  </div>
+</div>
+

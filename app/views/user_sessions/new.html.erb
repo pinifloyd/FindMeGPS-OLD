@@ -1,34 +1,23 @@
-<div id='registration-form' class='css-signin'>
-  <fieldset>
-    <legend>
-      <h1><%= t('top_bar.sign_in') %></h1>
-    </legend>
+<div class='row'>
+  <div class='span4 offset4'>
+    <fieldset>
 
-    <%= form_notice(:error) %>
+      <%= form_for @user_session, url: user_sessions_path, builder: BootStrapFormBuilder, html: { class: 'form-horizontal' } do |f| %>
+        <legend><%= t('user_session.sign_in_message') %></legend>
 
-    <%= form_for @user_session, url: user_sessions_path do |f| %>
-      <p>
-        <%= f.label :email %><br />
-        <%= f.text_field :email %>
-      </p>
-      <p>
-        <%= f.label :password %><br />
-        <%= f.password_field :password %>
-      </p>
+        <%= info_messages(:error) %>
 
-      <%= separator %>
+        <%= f.email_field :email, error: false %>
 
-      <p>
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-        <%= link_to t('top_bar.register'), signup_path, class: 'css-register' %>
-      </p>
+        <%= f.password_field :password, error: false %>
 
-      <%= separator %>
+        <%= f.check_box :remember_me, label: t('user_session.remember_me_message') %>
 
-      <p>
-        <%= f.submit t('top_bar.sign_in') %>
-      </p>
-    <% end %>
-  </fieldset>
+        <div class='form-actions'>
+          <%= f.submit t('navbar.sign_in'), class: 'btn btn-primary btn-large' %>
+        </div>
+      <% end %>
+
+    </fieldset>
+  </div>
 </div>

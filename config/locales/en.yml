@@ -1,20 +1,20 @@
 en:
   base:
-    site_title: 'FindMeGps'
-    or:         'Or'
-    create:     'Create'
-    update:     'Update'
-    cancel:     'Cancel'
-    edit:       'Edit'
-    delete:     'Delete'
-    actions:    'Actions'
-    back:       'Back'
-    submit:     'Submit'
+    site_title:   'FindMeGps'
+    project_name: 'FindMeGPS'
+    or:           'Or'
+    create:       'Create'
+    update:       'Update'
+    cancel:       'Cancel'
+    edit:         'Edit'
+    delete:       'Delete'
+    actions:      'Actions'
+    back:         'Back'
+    submit:       'Submit'
 
-  top_bar:
+  navbar:
     welcome:    'Welcome'
     devices:    'Devices'
-    front_end:  'Front End'
     main:       'Main'
     map:        'Map'
     cms:        'CMS'
@@ -25,15 +25,17 @@ en:
     users:      'Users'
 
   user_session:
-    logout: 'Logout successful!'
-    login:  'Login successful!'
-    error:  'Invalid Email/Password combination.'
+    sign_in_message:     'LOG IN TO FindMeGPS SERVICE'
+    logout:              'Logout successful!'
+    login:               'Login successful!'
+    error:               'Invalid Email/Password combination.'
+    remember_me_message: 'Remeber me on this computer'
 
   users:
     require_no_user:       'You must be logged out to access this page!'
     require_user:          'You must be logged in to access this page!'
-    registration_form:     'Registration form'
-    my_profile:            'My profile'
+    registration_form:     'REGISTER FOR FindeMeGPS SERVICE'
+    edit_form:             'EDIT YOUR FindMeGPS PROFILE'
     email:                 'Email'
     login_count:           'Login count'
     last_request_at:       'Last request at'
@@ -46,12 +48,12 @@ en:
     all_users:             'All users:'
     add_new_user:          'Add new user'
     created_at:            'Created at'
-    not_found:             'There is no found any users.'
     edit_user:             'Edit user'
     password:              'Password'
     password_confirmation: 'Password confirmation'
     available_roles:       'Available roles:'
     password_error:        'should contain lower and uppercase letters, numerical digits and be longer than 5 symbols'
+    create_account:        'Create an Account'
 
   devices:
     name:           'Device name'
@@ -59,4 +61,37 @@ en:
     add_new_device: 'Add new device'
     all_devices:    'All devices:'
     edit_device:    'Edit device'
-    not_found:      'There is no found any devices.'
+
+  map:
+    search_placeholder: 'Enter your city here...'
+
+  admin:
+    base:
+      actions: 'Actions'
+      edit:    'Edit'
+      delete:  'Delete'
+
+    navbar:
+      welcome:   'Welcome'
+      devices:   'Devices'
+      users:     'Users'
+      front_end: 'Front End'
+      sign_out:  'Sign Out'
+
+    devices:
+      name:           'Device name'
+      number:         'Device number'
+      not_found:      'There is no found any devices.'
+      all_devices:    'All devices'
+      add_new_device: 'Add new device'
+      edit_device:    'Edit Device'
+
+    users:
+      all_users:     'All users'
+      email:         'Email'
+      last_login_at: 'Last login at'
+      created_at:    'Created at'
+      not_found:     'There is no found any users.'
+      add_new_user:  'Add new user'
+      edit_user:     'Edit user'
+

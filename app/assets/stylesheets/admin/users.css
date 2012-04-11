@@ -1,17 +1,7 @@
-#column-left {
-  float: left;
-  min-width: 400px;
-}
-
-#column-right {
-  float: left;
-  min-width: 300px;
-}
-
-#column-right fieldset {
-  margin-top: 35px;
-}
-
-#column-right fieldset li {
-  padding: 8px;
-}
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require bootstrap_and_overrides
+*/

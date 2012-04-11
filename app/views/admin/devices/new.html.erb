@@ -1,13 +1,21 @@
-<%= form_for @device, url: admin_devices_path do |f| %>
-  <fieldset class='css-admin'>
-    <legend><h2><%= t('devices.add_new_device') %></h2></legend>
-
-    <%= render partial: 'form', locals: { f: f } %>
-  </fieldset>
-
-  <div class='css-submit'>
-    <%= f.submit t('base.create') %>
-    <%= t('base.or') %>
-    <%= link_to t('base.cancel'), admin_devices_path %>
+<div class='row'>
+  <div class='span12 page-header'>
+    <h1><%= t('admin.devices.add_new_device') %></h1>
   </div>
-<% end %>
+</div>
+
+<div class='row'>
+  <div class='span4 offset4'>
+    <%= form_for @device, url: admin_devices_path, builder: BootStrapFormBuilder, html: { class: 'form-horizontal' } do |f| %>
+
+      <%= render partial: 'form', locals: { f: f } %>
+
+      <div class='form-actions'>
+        <%= f.submit t('base.create'), class: 'btn btn-primary btn-large' %>
+        <%= link_to t('base.cancel'), admin_devices_path, class: 'btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+

@@ -1,36 +1,55 @@
-<p>
-  <b><%= t('users.email') %>:</b>
-  <%= @user.email %>
-</p>
+<div class='row'>
+  <div class='span4'>
+    <ul class='thumbnails'>
+      <li class='span4'>
+        <div class='thumbnail'>
+          <%= image_tag(image_path('no_image/360x268.gif')) %>
+        </div>
+      </li>
+    </ul>
 
-<p>
-  <b><%= t('users.login_count') %>:</b>
-  <%= @user.login_count %>
-</p>
+    <table class='table table-striped'>
+      <tbody>
+        <tr>
+          <th><%= t('users.email') %>:</th>
+          <th><%= @user.email %></th>
+        </tr>
+        <tr>
+          <th><%= t('users.login_count') %>:</th>
+          <th><%= @user.login_count %></th>
+        </tr>
+        <tr>
+          <th><%= t('users.last_request_at') %>:</th>
+          <th><%= @user.last_request_at %></th>
+        </tr>
+        <tr>
+          <th><%= t('users.last_login_at') %>:</th>
+          <th><%= @user.last_login_at %></th>
+        </tr>
+        <tr>
+          <th><%= t('users.current_login_at') %>:</th>
+          <th><%= @user.current_login_at %></th>
+        </tr>
+        <tr>
+          <th><%= t('users.last_login_ip') %>:</th>
+          <th><%= @user.last_login_ip %></th>
+        </tr>
+        <tr>
+          <th><%= t('users.current_login_ip') %>:</th>
+          <th><%= @user.current_login_ip %></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<p>
-  <b><%= t('users.last_request_at') %>:</b>
-  <%= @user.last_request_at %>
-</p>
-
-<p>
-  <b><%= t('users.last_login_at') %>:</b>
-  <%= @user.last_login_at %>
-</p>
-
-<p>
-  <b><%= t('users.current_login_at') %>:</b>
-  <%= @user.current_login_at %>
-</p>
-
-<p>
-  <b><%= t('users.last_login_ip') %>:</b>
-  <%= @user.last_login_ip %>
-</p>
-
-<p>
-  <b><%= t('users.current_login_ip') %>:</b>
-  <%= @user.current_login_ip %>
-</p>
-
-<%= link_to t('base.edit'), edit_user_path(@user) %>
+  <div class='span8'>
+    <div class='hero-unit'>
+      <h1>Some heading</h1>
+      <p>
+        There will some news or something else. Now I don't now it.
+        This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+      </p>
+      <p><%= link_to t('base.edit'), edit_user_path(@user), class: 'btn btn-primary btn-large' %></p>
+    </div>
+  </div>
+</div>

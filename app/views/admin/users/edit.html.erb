@@ -1,13 +1,19 @@
-<%= form_for @user, url: admin_user_path(@user) do |f| %>
-  <fieldset class='css-admin'>
-    <legend><h2><%= t('users.edit_user') %></h2></legend>
-
-    <%= render partial: 'form', locals: { f: f } %>
-  </fieldset>
-
-  <div class='css-submit'>
-    <%= f.submit t('base.update') %>
-    <%= t('base.or') %>
-    <%= link_to t('base.cancel'), admin_users_path %>
+<div class='row'>
+  <div class='span12 page-header'>
+    <h1><%= t('admin.users.edit_user') %></h1>
   </div>
-<% end %>
+</div>
+
+<div class='row'>
+  <div class='span4 offset4'>
+    <%= form_for @user, url: admin_user_path(@user), builder: BootStrapFormBuilder, html: { class: 'form-horizontal' } do |f| %>
+
+      <%= render partial: 'form', locals: { f: f } %>
+
+      <div class='form-actions'>
+        <%= f.submit t('base.update'), class: 'btn btn-primary btn-large' %>
+        <%= link_to t('base.cancel'), admin_users_path, class: 'btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>

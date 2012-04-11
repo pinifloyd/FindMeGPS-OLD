@@ -1,7 +1,25 @@
-<div style='margin: 0 auto; padding-top: 10%; width: 400px;'>
+<%= info_messages(:success, close_button: true) %>
+
+<div class="hero-unit">
   <% if current_user %>
-    There will be something like news or maybe something else.
+    <h1>Welcome, <%= current_user.email %></h1>
+    <p>There will be something like news or maybe something else.</p>
   <% else %>
-    You are not logged in. Please Logged In or Register.
+    <h1>You are not logged in.</h1>
+    <p>If you wanna use this service you must be registered user. So register or signin.</p>
   <% end %>
 </div>
+
+<div class="row">
+  <% 3.times do %>
+    <div class="span4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn" href="#">View details &raquo;</a></p>
+    </div>
+  <% end %>
+</div>
+
+<hr>
+
+<%= render partial: 'shared/footer' %>

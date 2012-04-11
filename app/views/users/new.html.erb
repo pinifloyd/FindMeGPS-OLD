@@ -1,17 +1,17 @@
-<div id='registration-form'>
-  <fieldset>
-    <legend>
-      <h1><%= t('users.registration_form') %></h1>
-    </legend>
+<div class='row'>
+  <div class='span4 offset4'>
+    <fieldset>
 
-    <%= separator %>
+      <%= form_for @user, builder: BootStrapFormBuilder, html: { class: 'form-horizontal' } do |f| %>
+        <legend><%= t('users.registration_form') %></legend>
 
-    <%= form_for @user do |f| %>
-      <%= render partial: 'form', object: f %>
+        <%= render partial: 'form', object: f %>
 
-      <%= separator %>
+        <div class='form-actions'>
+          <%= f.submit t('users.create_account'), class: 'btn btn-primary btn-large' %>
+        </div>
+      <% end %>
 
-      <p><%= f.submit t('base.submit') %></p>
-    <% end %>
-  </fieldset>
+    </fieldset>
+  </div>
 </div>

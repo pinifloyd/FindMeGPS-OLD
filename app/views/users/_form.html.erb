@@ -1,17 +1,5 @@
-<p>
-  <%= form.label :email %><br />
-  <%= form.text_field :email %><br />
-  <%= form.error_message_on :email, html_tag: 'span' %>
-</p>
+<%= form.email_field :email %>
 
-<p>
-  <%= form.label :password %><br />
-  <%= form.password_field :password %><br />
-  <%= form.error_message_on :password, html_tag: 'span' %>
-</p>
+<%= form.password_field :password %>
 
-<p>
-  <%= form.label :password_confirmation %><br />
-  <%= form.password_field :password_confirmation %><br />
-  <%= form.error_message_on :password, html_tag: 'span' %>
-</p>
+<%= form.password_field :password_confirmation %>

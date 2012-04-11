@@ -1,0 +1,26 @@
+<div class='navbar navbar-fixed-top'>
+  <div class='navbar-inner'>
+    <div class='container'>
+      <%= link_to('#', :class => 'btn btn-navbar', :'data-toggle' => 'collapse', :'data-target' => '.nav-collapse') do %>
+        <% 3.times do %>
+          <%= content_tag :span, nil, class: 'icon-bar' %>
+        <% end %>
+      <% end %>
+
+      <%= link_to t('base.project_name'), '#', class: 'brand' %>
+
+      <div class='nav-collapse'>
+        <ul class='nav'>
+          <li><%= link_to t('admin.navbar.welcome'), admin_welcome_path %></li>
+          <li><%= link_to t('admin.navbar.devices'), admin_devices_path %></li>
+          <li><%= link_to t('admin.navbar.users'), admin_users_path %></li>
+        </ul>
+
+        <ul class='nav pull-right'>
+          <li><%= link_to t('admin.navbar.front_end'), root_path %></li>
+          <li><%= link_to t('admin.navbar.sign_out'), signout_path, id: 'signout' %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

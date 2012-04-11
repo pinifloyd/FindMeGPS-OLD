@@ -1,0 +1,21 @@
+<div class='navbar navbar-fixed-top'>
+  <div class='navbar-inner'>
+    <div class='container'>
+      <%= link_to('#', :class => 'btn btn-navbar', :'data-toggle' => 'collapse', :'data-target' => '.nav-collapse') do %>
+        <% 3.times do %>
+          <%= content_tag :span, nil, class: 'icon-bar' %>
+        <% end %>
+      <% end %>
+
+      <%= link_to t('base.project_name'), '#', class: 'brand' %>
+
+      <div class='nav-collapse'>
+        <% if current_user %>
+          <%= render partial: 'shared/navbar_private' %>
+        <% else %>
+          <%= render partial: 'shared/navbar_public' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

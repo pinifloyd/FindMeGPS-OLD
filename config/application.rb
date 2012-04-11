@@ -57,8 +57,6 @@ module FindMeGps
     config.assets.version = '1.0'
 
     # Errors
-    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
-      "<span class='css-field-with-errors'>#{html_tag}</span>".html_safe
-    end
+    config.action_view.field_error_proc = Proc.new { |html, instance| html }
   end
 end

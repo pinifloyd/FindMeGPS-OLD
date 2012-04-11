@@ -1,23 +1,24 @@
-<fieldset>
-  <legend><h2><%= @user.email %></h2></legend>
+<div class='row'>
+  <div class='span12 page-header'>
+    <h1>
+      <%= @user.email %>
+      <div class='pull-right'>
+        <%= link_to t('admin.base.back'), admin_users_path, class: 'btn btn-small' %>
+        <%= link_to t('admin.base.edit'), edit_admin_user_path(@user), class: 'btn btn-small btn-warning' %>
+        <%= link_to t('admin.base.delete'), '#', class: 'btn btn-small btn-danger' %>
+      </div>
+    </h1>
+  </div>
+</div>
 
-  <p><strong><%= t('users.email') %>:</strong> <%= @user.email %></p>
-  <p><strong><%= t('users.login_count') %>:</strong> <%= @user.login_count %></p>
-  <p><strong><%= t('users.last_request_at') %>:</strong> <%= @user.last_request_at %></p>
-  <p><strong><%= t('users.last_login_at') %>:</strong> <%= @user.last_login_at %></p>
-  <p><strong><%= t('users.current_login_at') %>:</strong> <%= @user.current_login_at %></p>
-  <p><strong><%= t('users.last_login_ip') %>:</strong> <%= @user.last_login_ip %></p>
-  <p><strong><%= t('users.current_login_ip') %>:</strong> <%= @user.current_login_ip %></p>
-</fieldset>
-
-<div class='css-submit'>
-  <%= link_to(edit_admin_user_path(@user)) do %>
-    <input type='button' value="<%= t('base.edit') %>">
-  <% end %>
-
-  <%= t('base.or') %>
-
-  <%= link_to(admin_users_path) do %>
-    <input type='button' value="<%= t('base.back') %>">
-  <% end %>
+<div class='row'>
+  <div class='span4'>
+    <p><strong><%= t('users.email') %>:</strong> <%= @user.email %></p>
+    <p><strong><%= t('users.login_count') %>:</strong> <%= @user.login_count %></p>
+    <p><strong><%= t('users.last_request_at') %>:</strong> <%= @user.last_request_at %></p>
+    <p><strong><%= t('users.last_login_at') %>:</strong> <%= @user.last_login_at %></p>
+    <p><strong><%= t('users.current_login_at') %>:</strong> <%= @user.current_login_at %></p>
+    <p><strong><%= t('users.last_login_ip') %>:</strong> <%= @user.last_login_ip %></p>
+    <p><strong><%= t('users.current_login_ip') %>:</strong> <%= @user.current_login_ip %></p>
+  </div>
 </div>

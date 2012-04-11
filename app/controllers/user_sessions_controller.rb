@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = t('user_session.login')
+      flash[:success] = t('user_session.login')
       redirect_to root_path
     else
       flash[:error] = t('user_session.error')
@@ -20,7 +20,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     current_user_session.destroy
-    flash[:notice] = t('user_session.logout')
+    flash[:success] = t('user_session.logout')
     redirect_to root_path
   end
 end

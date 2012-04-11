@@ -1,35 +1,40 @@
-<div class='css-pre-table'>
-  <h1><%= t('devices.all_devices') %></h1>
-
-  <%= link_to(new_admin_device_path, class: 'css-new') do %>
-    <input type='button' value="<%= t('devices.add_new_device') %>">
-  <% end %>
+<div class='row'>
+  <div class='span12 page-header'>
+    <h1>
+      <%= t('admin.devices.all_devices') %> <small>There are all devices on our database.</small>
+      <%= link_to t('admin.devices.add_new_device'), new_admin_device_path, class: 'pull-right btn btn-success btn-small' %>
+    </h1>
+  </div>
 </div>
 
-<table class='css-admin'>
-  <thead>
-    <tr>
-      <th><%= t('devices.name') %></th>
-      <th><%= t('devices.number') %></th>
-      <th><%= t('base.actions') %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% if @devices %>
-      <% @devices.each do |device| %>
+<div class='row'>
+  <div class='span12'>
+    <table class='table table-striped'>
+      <thead>
         <tr>
-          <td><%= link_to device.name, admin_device_path(device) %></td>
-          <td><%= device.number %></td>
-          <td class='css-actions js-actions'>
-            <%= link_to t('base.edit'), edit_admin_device_path(device) %>
-            <%= link_to t('base.delete'), admin_device_path(device), method: :delete, class: 'js-destroy' %>
-          </td>
+          <th><%= t('admin.devices.name') %></th>
+          <th><%= t('admin.devices.number') %></th>
+          <th><%= t('admin.base.actions') %></th>
         </tr>
-      <% end %>
-    <% else %>
-      <tr>
-        <td colspan='3'><%= t('devices.not_found') %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
+      <tbody>
+        <% if @devices %>
+          <% @devices.each do |device| %>
+            <tr>
+              <td><%= link_to device.name, admin_device_path(device) %></td>
+              <td><%= device.number %></td>
+              <td class='js-actions'>
+                <%= link_to t('admin.base.edit'), edit_admin_device_path(device), class: 'btn btn-warning btn-mini' %>
+                <%= link_to t('admin.base.delete'), admin_device_path(device), method: :delete, class: 'btn btn-danger btn-mini js-destroy' %>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan='3'><%= t('admin.devices.not_found') %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

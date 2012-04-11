@@ -1,19 +1,18 @@
-<fieldset>
-  <legend><h2><%= @device.name %></h2></legend>
+<div class='row'>
+  <div class='span12 page-header'>
+    <h1>
+      <%= @device.name %>
+      <div class='pull-right'>
+        <%= link_to t('admin.base.back'), admin_devices_path, class: 'btn btn-small' %>
+        <%= link_to t('admin.base.edit'), edit_admin_device_path(@device), class: 'btn btn-small btn-warning' %>
+        <%= link_to t('admin.base.delete'), '#', class: 'btn btn-small btn-danger' %>
+      </div>
+    </h1>
+  </div>
+</div>
 
-  <p>
-    <strong><%= t('devices.number') %>:</strong> <%= @device.number %>
-  </p>
-</fieldset>
-
-<div class='css-submit'>
-  <%= link_to(edit_admin_device_path(@device)) do %>
-    <input type='button' value="<%= t('base.edit') %>">
-  <% end %>
-
-  <%= t('base.or') %>
-
-  <%= link_to(admin_devices_path) do %>
-    <input type='button' value="<%= t('base.back') %>">
-  <% end %>
+<div class='row'>
+  <div class='span12'>
+    <strong><%= t('admin.devices.number') %>:</strong> <%= @device.number %>
+  </div>
 </div>

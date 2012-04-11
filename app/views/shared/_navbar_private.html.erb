@@ -1,0 +1,14 @@
+<ul class='nav'>
+  <li><%= link_to t('navbar.main'), root_path %></li>
+  <% permitted_to? :show, :maps do %>
+    <li><%= link_to t('navbar.map'), map_path %></li>
+  <% end %>
+</ul>
+
+<ul class='nav pull-right'>
+  <% permitted_to? :read, :admin_welcomes do %>
+    <li><%= link_to t('navbar.cms'), admin_welcome_path %></li>
+  <% end %>
+  <li><%= link_to t('navbar.my_profile'), user_path(current_user) %></li>
+  <li><%= link_to t('navbar.sign_out'), signout_path, id: 'signout' %></li>
+</ul>

@@ -1,13 +1,17 @@
 module ApplicationHelper
 
-  def required_field
-    content_tag(:span, ' (required)', class: 'css-required-field')
+  require "#{Rails.root}/lib/boot_strap_form_builder.rb"
+
+  def info_messages(type, options = {})
+    return unless flash[type]
+
+    if options[:close_button]
+      close_button = link_to('x', '#', class: 'close', :'data-dismiss' => 'alert')
+    end
+
+    info_content = [ close_button, flash[type] ].join
+
+    content_tag(:div, info_content.html_safe, class: 'alert alert-' + type.to_s)
   end
 
-  def separator(classes = [])
-    classes |= ['css-separator']
-    classes = classes.join(' ')
-
-    content_tag(:div, nil, class: classes)
-  end
 end
