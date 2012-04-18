@@ -29,11 +29,7 @@ $(document).ready ->
       )
 
     detectUserLocation: ->
-      if (google.gears)
-        GoogleMap.detectUserLocationByService(
-          google.gears.facatory.create('beta.geolocation')
-        )
-      else if (navigator.geolocation)
+      if (navigator.geolocation)
         GoogleMap.detectUserLocationByService(
           navigator.geolocation
         )
@@ -53,11 +49,10 @@ $(document).ready ->
 
         if (geometry.viewport)
           GoogleMap.map.fitBounds(geometry.viewport)
-          GoogleMap.map.setZoom(zoom)
         else
           GoogleMap.map.setCenter(geometry.location)
-          GoogleMap.map.setZoom(zoom)
 
+        GoogleMap.map.setZoom(zoom)
         marker.setPosition(geometry.location)
       )
 
