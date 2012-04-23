@@ -21,4 +21,4 @@
 //= require twitter/bootstrap/bootstrap-carousel
 //= require twitter/bootstrap/bootstrap-typeahead
 //
-//= require admin/base
+//= require application/admin/base
