@@ -8,7 +8,7 @@
 
     <%= stylesheet_link_tag params[:controller], media: 'all' %>
 
-    <%= javascript_include_tag params[:controller] %>
+    <%= javascript_include_tag 'manifests/' + params[:controller] %>
 
     <%= csrf_meta_tags %>
 
