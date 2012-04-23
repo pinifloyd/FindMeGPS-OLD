@@ -51,7 +51,6 @@ en:
     edit_user:             'Edit user'
     password:              'Password'
     password_confirmation: 'Password confirmation'
-    available_roles:       'Available roles:'
     password_error:        'should contain lower and uppercase letters, numerical digits and be longer than 5 symbols'
     create_account:        'Create an Account'
 
@@ -87,11 +86,11 @@ en:
       edit_device:    'Edit Device'
 
     users:
-      all_users:     'All users'
-      email:         'Email'
-      last_login_at: 'Last login at'
-      created_at:    'Created at'
-      not_found:     'There is no found any users.'
-      add_new_user:  'Add new user'
-      edit_user:     'Edit user'
-
+      all_users:       'All users'
+      email:           'Email'
+      last_login_at:   'Last login at'
+      created_at:      'Created at'
+      not_found:       'There is no found any users.'
+      add_new_user:    'Add new user'
+      edit_user:       'Edit user'
+      available_roles: 'Available roles'

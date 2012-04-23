@@ -4,8 +4,9 @@
 
 <%= f.password_field :password_confirmation %>
 
-<%# TODO: helper/admin/users_helper.rb - refactoring %>
-<%#= f.label :roles, t('users.available_roles') %>
-<%# @roles.each do |role| %>
-  <%#= available_user_role(role, f.object.role_ids) %>
-<%# end %>
+<div class='control-group'>
+  <%= f.label :roles, t('admin.users.available_roles'), class: 'control-label' %>
+  <div class='controls well'>
+    <%= available_user_roles(@roles, f.object.role_ids) %>
+  </div>
+</div>

@@ -1,22 +1,26 @@
 module Admin::UsersHelper
 
-  def available_user_role(role, role_ids)
-    checked, disabled = true, true if role.name == Role::DEFAULT_ROLE
-    checked ||= role_ids.include?(role.id)
+  def available_user_roles(roles, current_role_ids)
+    roles.map do |role|
+      checked, disabled = true, true if role.name == Role::DEFAULT_ROLE
+      checked ||= current_role_ids.include?(role.id)
 
-    checkbox       = user_role_checkbox(role.id, checked, disabled)
-    checkbox_label = label_tag("role_#{role.id}", role.name)
-    content        = [ checkbox, checkbox_label ].join.html_safe
-
-    content_tag(:li, content)
+      user_role_checkbox(role, checked, disabled)
+    end.join.html_safe
   end
 
+  def user_role_checkbox(role, checked = false, disabled = false)
+    checkbox_name = 'user[role_ids][]'
+    checkbox_id   = 'role_' + role.id.to_s
 
-  def user_role_checkbox(role_id, checked = false, disabled = false)
-    checkbox        = check_box_tag('user[role_ids][]', role_id, checked, id: "role_#{role_id}", disabled: disabled)
-    hidden_checkbox = hidden_field_tag('user[role_ids][]', role_id) if checked && disabled
+    checkbox = check_box_tag(checkbox_name, role.id, checked, id: checkbox_id, disabled: disabled)
+    if checked && disabled
+      hidden_checkbox = hidden_field_tag(checkbox_name, role.id)
+    end
 
-    [ checkbox, hidden_checkbox ].join
+    content = [ checkbox, role.name, hidden_checkbox ].join
+
+    content_tag(:label, content.html_safe, class: 'checkbox')
   end
 
 end
