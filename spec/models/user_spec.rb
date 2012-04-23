@@ -5,13 +5,15 @@ describe User do
   before do
     @email    = 'example@gmail.com'
     @password = '1qa@WS3ed'
+    @roles    = [ Role.new(name: 'User', active: true) ]
   end
 
   it 'should be valid' do
     user = User.new \
       email:                 @email,
       password:              @password,
-      password_confirmation: @password
+      password_confirmation: @password,
+      roles:                 @roles
 
     user.should be_valid
   end
@@ -20,7 +22,8 @@ describe User do
     user = User.new \
       email:                 @email,
       password:              '',
-      password_confirmation: ''
+      password_confirmation: '',
+      roles:                 @roles
 
     user.should_not be_valid
   end
@@ -29,7 +32,8 @@ describe User do
     user = User.new \
       email:                 '',
       password:              @password,
-      password_confirmation: @password
+      password_confirmation: @password,
+      roles:                 @roles
 
     user.should_not be_valid
   end
@@ -38,7 +42,8 @@ describe User do
     user = User.new \
       email:                 @email,
       password:              @password,
-      password_confirmation: @password + 'not_valid'
+      password_confirmation: @password + 'not_valid',
+      roles:                 @roles
 
     user.should_not be_valid
   end
@@ -47,7 +52,8 @@ describe User do
     user = User.new \
       email:                 @email,
       password:              '',
-      password_confirmation: @password
+      password_confirmation: @password,
+      roles:                 @roles
 
     user.should_not be_valid
   end
@@ -58,7 +64,8 @@ describe User do
     user = User.new \
       email:                 @email,
       password:              password,
-      password_confirmation: password
+      password_confirmation: password,
+      roles:                 @roles
 
     user.should_not be_valid
   end
@@ -69,7 +76,8 @@ describe User do
     user = User.new \
       email:                 @email,
       password:              password,
-      password_confirmation: password
+      password_confirmation: password,
+      roles:                 @roles
 
     user.should_not be_valid
   end
@@ -80,7 +88,8 @@ describe User do
     user = User.new \
       email:                 @email,
       password:              password,
-      password_confirmation: password
+      password_confirmation: password,
+      roles:                 @roles
 
     user.should_not be_valid
   end
@@ -91,7 +100,17 @@ describe User do
     user = User.new \
       email:                 @email,
       password:              password,
-      password_confirmation: password
+      password_confirmation: password,
+      roles:                 @roles
+
+    user.should_not be_valid
+  end
+
+  it 'should not allow without role' do
+    user = User.new \
+      email: @email,
+      password: @password,
+      password_confirmation: @password
 
     user.should_not be_valid
   end
