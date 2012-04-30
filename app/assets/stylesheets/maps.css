@@ -5,3 +5,26 @@
  *= require_self
  *= require bootstrap_and_overrides
 */
+
+div.page-content {
+  min-height: 400px;
+}
+
+div.page-content div.span3,
+div.page-content div.span3 div.well,
+div.page-content div.span3 div.well div.table-devices,
+div.page-content div.span9,
+div.page-content div.span9 div.well,
+div.page-content div.span9 div.well div#google-map {
+  height: inherit;
+}
+
+div.page-content div.span3 div.table-devices {
+  overflow: auto;
+}
+
+div.page-content div.span9 div#google-map {
+  width: 100%;
+}
+
+

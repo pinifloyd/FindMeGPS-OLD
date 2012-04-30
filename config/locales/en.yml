@@ -60,9 +60,11 @@ en:
     add_new_device: 'Add new device'
     all_devices:    'All devices:'
     edit_device:    'Edit device'
+    not_found:      'Not found any device.'
 
   map:
     search_placeholder: 'Enter your city here...'
+    map:                'Map'
 
   admin:
     base:
@@ -80,7 +82,7 @@ en:
     devices:
       name:           'Device name'
       number:         'Device number'
-      not_found:      'There is no found any devices.'
+      not_found:      'Not found any device.'
       all_devices:    'All devices'
       add_new_device: 'Add new device'
       edit_device:    'Edit Device'
@@ -90,7 +92,7 @@ en:
       email:           'Email'
       last_login_at:   'Last login at'
       created_at:      'Created at'
-      not_found:       'There is no found any users.'
+      not_found:       'Not found any user.'
       add_new_user:    'Add new user'
       edit_user:       'Edit user'
       available_roles: 'Available roles'
