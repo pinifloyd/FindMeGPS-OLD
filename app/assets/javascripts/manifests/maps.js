@@ -5,5 +5,7 @@
 // the compiled file.
 //
 //= require plugins/twitter/bootstrap
+//= require plugins/googleMap
 //
+//= require application/base
 //= require application/maps

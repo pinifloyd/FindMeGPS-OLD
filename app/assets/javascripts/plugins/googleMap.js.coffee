@@ -56,23 +56,16 @@ $(document).ready ->
         marker.setPosition(geometry.location)
       )
 
+    # Just for test
+    loadKmlFile: ->
+      timestamp = new Date().getTime()
+      kmlLayer = new google.maps.KmlLayer('http://dl.dropbox.com/u/21100318/FIndMeGPS/kinoteatrs.kml?' + timestamp)
+      kmlLayer.setMap(GoogleMap.map)
+
     initialize: ->
       GoogleMap.setMapWithDefaultOptions()
       GoogleMap.detectUserLocation()
       GoogleMap.autocompleteSearchPlaces()
-
-  # TODO: replace
-  # $(window).resize ->
-  #   $('#google-map').css('height', $(this).height() - 100)
-  #   $('div.table-devices').css('height', $(this).height() - 140)
-
-  # $('.js-page-content').css({ height: $(window).height() - 100 - 91 - 40 })
-
-  excessPx =  parseInt( $('body').css('padding-top') )
-  excessPx += parseInt( $('body').css('padding-bottom') )
-  excessPx += $('div.navbar').height()
-  excessPx += $('div.js-header-content').height()
-
-  $('div.js-page-content').css({ height: $(window).height() - excessPx })
+      GoogleMap.loadKmlFile()
 
   GoogleMap.initialize()
