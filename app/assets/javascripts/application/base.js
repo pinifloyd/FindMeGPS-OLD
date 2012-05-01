@@ -19,4 +19,16 @@
     });
   };
 
+  $.toggleCheckboxCheck = function(options) {
+    if (!options.checkbox) { return; }
+
+    var checkbox          = $(options.checkbox);
+    var allCheckboxes     = $(options.allCheckboxes).length;
+    var checkedCheckboxes = $(options.checkedCheckboxes).length;
+
+    var checked = allCheckboxes == checkedCheckboxes;
+
+    checkbox.attr('checked', checked);
+  };
+
 })(jQuery);
