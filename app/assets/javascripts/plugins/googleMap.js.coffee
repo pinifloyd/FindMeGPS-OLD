@@ -5,9 +5,13 @@ $(document).ready ->
     searchContainer: document.getElementById('search')
 
     defaultOptions:
-      zoom:      19
-      center:    new google.maps.LatLng(34.134088898889, -118.32178889889)
-      mapTypeId: google.maps.MapTypeId.SATELLITE
+      zoom:             19
+      center:           new google.maps.LatLng(34.134088898889, -118.32178889889)
+      mapTypeId:        google.maps.MapTypeId.SATELLITE
+      disableDefaultUI: true
+      mapTypeControl:   true
+      zoomControl:      true
+      scaleControl:     true
 
     setMapWithDefaultOptions: ->
       GoogleMap.map = new google.maps.Map(

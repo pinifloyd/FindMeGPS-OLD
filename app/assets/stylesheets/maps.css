@@ -27,4 +27,11 @@ div.page-content div.span9 div#google-map {
   width: 100%;
 }
 
+div.page-content div.span9 div#google-map label {
+  width: auto;
+  display: inline;
+}
 
+div.page-content div.span9 div#google-map img {
+  max-width: none;
+}
