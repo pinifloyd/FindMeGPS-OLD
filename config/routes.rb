@@ -1,5 +1,6 @@
 FindMeGps::Application.routes.draw do
-  root :to => 'welcome#index'
+
+  root to: 'welcome#index'
 
   match 'users/new' => 'users#new', as: '/signup'
   match '/signin',  to: 'user_sessions#new'
@@ -13,6 +14,12 @@ FindMeGps::Application.routes.draw do
     resource  :welcome, only: :show
     resources :devices
     resources :users
+  end
+
+  namespace :api do
+    resources :devices, only: '' do
+      resources :locations, only: :create
+    end
   end
 
   # The priority is based upon order of creation:

@@ -11,16 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120220161530) do
+ActiveRecord::Schema.define(:version => 20120515125135) do
 
   create_table "device_locations", :force => true do |t|
-    t.float    "lat",         :null => false
-    t.float    "lng",         :null => false
-    t.float    "temperature"
-    t.integer  "battery"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "device_id",   :null => false
+    t.float    "latitude",            :null => false
+    t.float    "longitude",           :null => false
+    t.float    "horizontal_accuracy"
+    t.datetime "created_at",          :null => false
+    t.integer  "device_id",           :null => false
+    t.float    "speed"
   end
 
   create_table "devices", :force => true do |t|

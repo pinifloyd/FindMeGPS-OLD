@@ -63,7 +63,9 @@ $(document).ready ->
     # Just for test
     loadKmlFile: ->
       timestamp = new Date().getTime()
-      kmlLayer = new google.maps.KmlLayer('http://dl.dropbox.com/u/21100318/FIndMeGPS/kinoteatrs.kml?' + timestamp)
+      # kmlLayer = new google.maps.KmlLayer('http://dl.dropbox.com/u/21100318/FIndMeGPS/kinoteatrs.kml?' + timestamp, { preserveViewport: true })
+      # kmlLayer = new google.maps.KmlLayer('http://dl.dropbox.com/u/21100318/FIndMeGPS/load_kml.kml?' + timestamp)
+      kmlLayer = new google.maps.KmlLayer('http://dl.dropbox.com/u/21100318/FIndMeGPS/aleksey_path.kml?' + timestamp)
       kmlLayer.setMap(GoogleMap.map)
 
     initialize: ->

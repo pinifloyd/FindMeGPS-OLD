@@ -4,6 +4,9 @@ authorization do
     has_permission_on :welcome,       to: :index
     has_permission_on :user_sessions, to: :create
     has_permission_on :users,         to: :create
+
+    # temp for mobile
+    has_permission_on :api_locations, to: :create
   end
 
   role :user do

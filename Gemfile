@@ -23,6 +23,7 @@ group :development do
   gem 'hirb'
   gem 'wirble'
   gem 'thin'
+  gem 'railroady'
 end
 
 # Gems used only for test environment
