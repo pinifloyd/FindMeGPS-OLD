@@ -19,7 +19,7 @@ authorization do
 
   role :operator do
     includes :user
-    has_permission_on :maps, to: :show
+    has_permission_on :maps, to: [ :show, :generate_kml ]
   end
 
   role :admin do

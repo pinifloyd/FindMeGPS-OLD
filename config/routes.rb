@@ -9,6 +9,9 @@ FindMeGps::Application.routes.draw do
 
   resources :users, except: [ :index, :destroy ]
   resource  :user_sessions, only: [ :new, :create, :destroy ]
+  resource  :maps, only: :show do
+    post :generate_kml, on: :collection
+  end
 
   namespace :admin do
     resource  :welcome, only: :show

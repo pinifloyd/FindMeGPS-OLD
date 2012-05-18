@@ -3,6 +3,7 @@ $(document).ready ->
     map:             null
     mapContainer:    document.getElementById('google-map')
     searchContainer: document.getElementById('search')
+    kmlLayer:        null
 
     defaultOptions:
       zoom:             19
@@ -60,18 +61,47 @@ $(document).ready ->
         marker.setPosition(geometry.location)
       )
 
-    # Just for test
-    loadKmlFile: ->
-      timestamp = new Date().getTime()
-      # kmlLayer = new google.maps.KmlLayer('http://dl.dropbox.com/u/21100318/FIndMeGPS/kinoteatrs.kml?' + timestamp, { preserveViewport: true })
-      # kmlLayer = new google.maps.KmlLayer('http://dl.dropbox.com/u/21100318/FIndMeGPS/load_kml.kml?' + timestamp)
-      kmlLayer = new google.maps.KmlLayer('http://dl.dropbox.com/u/21100318/FIndMeGPS/aleksey_path.kml?' + timestamp)
-      kmlLayer.setMap(GoogleMap.map)
+    bindGenerateKmlClick: ->
+      $('a.js-generate-kml').click (e) ->
+        e.preventDefault()
+
+        checkboxes = $(':checkbox:checked[id=device_ids_]')
+
+        GoogleMap.sendDataForGenerateKml(e.target.href, checkboxes)
+
+    loadKmlIfCheckboxChecked: ->
+      checkboxes = $(':checkbox:checked[id=device_ids_]')
+
+      if (checkboxes.length == 0)
+        return false
+
+      url = $('a.js-generate-kml').attr('href')
+      GoogleMap.sendDataForGenerateKml(url, checkboxes)
+
+    setKmlLayerToMap: (showKmlOnMap) ->
+      if (GoogleMap.kmlLayer)
+        GoogleMap.kmlLayer.setMap(null)
+
+      if (showKmlOnMap)
+        pathToKmlLayer = 'http://dl.dropbox.com/u/21100318/FIndMeGPS/find_me_gps.kml?' + new Date().getTime()
+        GoogleMap.kmlLayer = new google.maps.KmlLayer(pathToKmlLayer)
+        GoogleMap.kmlLayer.setMap(GoogleMap.map)
+
+    sendDataForGenerateKml: (url, data) ->
+      $.ajax({
+        url:  url,
+        type: 'POST',
+        data: data.serialize(),
+        complete: (response) ->
+          showKmlOnMap = $.parseJSON(response.responseText).show_kml_on_map
+          GoogleMap.setKmlLayerToMap(showKmlOnMap)
+      })
 
     initialize: ->
       GoogleMap.setMapWithDefaultOptions()
       GoogleMap.detectUserLocation()
       GoogleMap.autocompleteSearchPlaces()
-      GoogleMap.loadKmlFile()
+      GoogleMap.bindGenerateKmlClick()
+      GoogleMap.loadKmlIfCheckboxChecked()
 
   GoogleMap.initialize()

@@ -6,10 +6,13 @@
   <div class='span12 page-header'>
     <h1>
       <%= t('map.map') %> <small>There will be some settings</small>
+
       <div class='input-prepend pull-right'>
         <span class='add-on'><i class='icon-search'></i></span>
         <%= text_field_tag :search, nil, placeholder: t('map.search_placeholder') %>
       </div>
+
+      <%= link_to t('map.show_kml'), generate_kml_maps_path, class: 'pull-right btn btn-success btn-small js-generate-kml', style: 'margin-right: 10px;' %>
     </h1>
   </div>
 </div>
