@@ -4,7 +4,7 @@ module ApplicationHelper
 
   def info_messages(options = {})
     if options[:close_button]
-      close_button = link_to 'x', '#', class: 'close', :'data-dissmis' => 'alert'
+      close_button = link_to 'x', '#', class: 'close', :'data-dismiss' => 'alert'
     end
 
     content = flash.map do |type, message|

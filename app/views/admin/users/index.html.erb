@@ -17,7 +17,7 @@
           <th><%= t('admin.users.email') %></th>
           <th><%= t('admin.users.last_login_at') %></th>
           <th><%= t('admin.users.created_at') %></th>
-          <th>Device Number</th>
+          <th><%= t('admin.users.device_number') %></th>
           <th><%= t('admin.base.actions') %></th>
         </tr>
       </thead>
@@ -28,7 +28,7 @@
             <td><%= user.last_login_at %></td>
             <td><%= user.created_at %></td>
             <td><%= user.device.try(:number) %></td>
-            <td class='js-actions'>
+            <td>
               <%= link_to t('admin.base.edit'), edit_admin_user_path(user), class: 'btn btn-warning btn-mini' %>
               <%= link_to t('admin.base.delete'), admin_user_path(user), method: :delete, class: 'btn btn-danger btn-mini js-destroy' %>
             </td>

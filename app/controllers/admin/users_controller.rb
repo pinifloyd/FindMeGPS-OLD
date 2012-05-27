@@ -17,8 +17,8 @@ class Admin::UsersController < Admin::BaseController
     @user = User.new(params[:user])
 
     if @user.save
-      flash[:success] = 'Sucessfully created new user!'
-      redirect_to admin_users_path
+      flash[:success] = t('admin.users.created_user')
+      redirect_to edit_admin_user_path(@user)
     else
       @roles = Role.all
 
@@ -32,7 +32,7 @@ class Admin::UsersController < Admin::BaseController
 
   def update
     if @user.update_attributes(params[:user])
-      flash[:success] = 'Sucessfully updated user!'
+      flash[:success] = t('admin.users.updated_user')
       redirect_to admin_users_path
     else
       @roles = Role.all

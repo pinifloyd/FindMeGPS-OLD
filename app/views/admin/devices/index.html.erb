@@ -23,7 +23,7 @@
             <tr>
               <td><%= link_to device.name, admin_device_path(device) %></td>
               <td><%= device.number %></td>
-              <td class='js-actions'>
+              <td>
                 <%= link_to t('admin.base.edit'), edit_admin_device_path(device), class: 'btn btn-warning btn-mini' %>
                 <%= link_to t('admin.base.delete'), admin_device_path(device), method: :delete, class: 'btn btn-danger btn-mini js-destroy' %>
               </td>

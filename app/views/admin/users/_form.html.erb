@@ -1,22 +1,32 @@
-<%= f.email_field :email %>
+<div class='row'>
+  <div class='span12'>
+    <%= info_messages(close_button: true) %>
+  </div>
 
-<%= f.password_field :password %>
+  <div class='span4'>
+    <%= f.email_field :email %>
+    <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation %>
+  </div>
 
-<%= f.password_field :password_confirmation %>
-
-<% unless f.object.new_record? %>
-  <div class='control-group'>
-    <%= f.label :device, t('users.device'), class: 'control-label' %>
-
-    <div class='controls js-form-device-actions'>
-      <%= render partial: 'admin/users/modal_search_device/form_search_device_field', locals: { user: f.object } %>
+  <div class='span4'>
+    <div class='control-group'>
+      <%= f.label :roles, t('admin.users.available_roles'), class: 'control-label' %>
+      <div class='controls well'>
+        <%= available_user_roles(@roles, f.object.role_ids) %>
+      </div>
     </div>
   </div>
-<% end %>
 
-<div class='control-group'>
-  <%= f.label :roles, t('admin.users.available_roles'), class: 'control-label' %>
-  <div class='controls well'>
-    <%= available_user_roles(@roles, f.object.role_ids) %>
+  <div class='span4'>
+    <% unless f.object.new_record? %>
+      <div class='control-group'>
+        <%= f.label :device, t('users.device'), class: 'control-label' %>
+
+        <div class='controls js-form-device-actions'>
+          <%= render partial: 'admin/users/modal_search_device/form_search_device_field', locals: { user: f.object } %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

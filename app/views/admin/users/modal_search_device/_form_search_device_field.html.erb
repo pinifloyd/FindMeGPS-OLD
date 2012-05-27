@@ -1,5 +1,5 @@
 <% if user.device %>
-  Number: <%= user.device.number %>
+  <%= t('admin.users.device_number') %>: <%= user.device.number %>
 
   <span class='help-block well'>
     <%= link_to change_device_admin_user_path(id: user.id, format: :js), class: 'btn btn-danger btn-mini pull-right js-form-remove-device' do %>
@@ -8,17 +8,17 @@
     <% end %>
   </span>
 <% else %>
-  This user doesn't have any device.
+  <%= t('admin.users.device_not_found') %>
 
   <span class='help-block well'>
     <%= link_to search_device_admin_users_path(id: user.id, format: :js), class: 'btn btn-success btn-mini pull-left js-form-select-device', :'data-modal' => '#modal-select-device' do %>
       <%= content_tag :i, nil, class: 'icon-ok icon-white' %>
-      Select
+      <%= t('admin.base.select') %>
     <% end %>
 
     <%= link_to '#', class: 'btn btn-mini pull-right' do %>
       <%= content_tag :i, nil, class: 'icon-plus' %>
-      Create
+      <%= t('admin.base.create') %>
     <% end %>
   </span>
 <% end %>
