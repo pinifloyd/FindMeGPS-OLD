@@ -53,6 +53,7 @@ en:
     password_confirmation: 'Password confirmation'
     password_error:        'should contain lower and uppercase letters, numerical digits and be longer than 5 symbols'
     create_account:        'Create an Account'
+    device:                'Device'
 
   devices:
     name:           'Device name'

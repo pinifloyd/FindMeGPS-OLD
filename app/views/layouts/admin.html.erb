@@ -22,7 +22,11 @@
       <%= yield %>
     </div>
 
-    <div id='bottom_inline_javascripts'>
+    <div id='bottom-modals'>
+      <%= yield :bottom_modals %>
+    </div>
+
+    <div id='bottom-inline-javascripts'>
       <%= yield :bottom_inline_javascripts %>
     </div>
   </body>

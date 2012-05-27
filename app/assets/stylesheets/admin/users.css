@@ -5,3 +5,7 @@
  *= require_self
  *= require bootstrap_and_overrides
 */
+
+#modal-select-device {
+  width: auto;
+}

@@ -5,7 +5,7 @@
       <%= form_for @user_session, url: user_sessions_path, builder: BootStrapFormBuilder, html: { class: 'form-horizontal' } do |f| %>
         <legend><%= t('user_session.sign_in_message') %></legend>
 
-        <%= info_messages(:error) %>
+        <%= info_messages %>
 
         <%= f.email_field :email, error: false %>
 

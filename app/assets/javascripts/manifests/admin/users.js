@@ -5,3 +5,7 @@
 // the compiled file.
 //
 //= require plugins/twitter/bootstrap-admin
+//
+//= require application/application
+//= require application/admin/base
+//= require application/admin/users

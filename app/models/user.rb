@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   PASSWORD_REGEXP = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/
 
   has_and_belongs_to_many :roles
+  has_one :device
 
   validates_format_of :password, :password_confirmation,
     with:    PASSWORD_REGEXP,

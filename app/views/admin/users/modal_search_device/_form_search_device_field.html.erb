@@ -1,0 +1,24 @@
+<% if user.device %>
+  Number: <%= user.device.number %>
+
+  <span class='help-block well'>
+    <%= link_to change_device_admin_user_path(id: user.id, format: :js), class: 'btn btn-danger btn-mini pull-right js-form-remove-device' do %>
+      <%= content_tag :i, nil, class: 'icon-minus icon-white' %>
+      Remove
+    <% end %>
+  </span>
+<% else %>
+  This user doesn't have any device.
+
+  <span class='help-block well'>
+    <%= link_to search_device_admin_users_path(id: user.id, format: :js), class: 'btn btn-success btn-mini pull-left js-form-select-device', :'data-modal' => '#modal-select-device' do %>
+      <%= content_tag :i, nil, class: 'icon-ok icon-white' %>
+      Select
+    <% end %>
+
+    <%= link_to '#', class: 'btn btn-mini pull-right' do %>
+      <%= content_tag :i, nil, class: 'icon-plus' %>
+      Create
+    <% end %>
+  </span>
+<% end %>

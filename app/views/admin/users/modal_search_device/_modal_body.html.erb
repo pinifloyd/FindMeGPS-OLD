@@ -1,0 +1,48 @@
+<%= info_messages(close_button: true) %>
+
+<%= form_for search, url: search_device_admin_users_path(format: :js, id: user.id) do |search| %>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th><%= search.sort_link :name, 'Device name', action: :search_device, format: :js, id: user.id %></th>
+        <th><%= search.sort_link :number, 'Device number', action: :search_device, format: :js, id: user.id %></th>
+        <th><%= search.sort_link :user_email, 'User', action: :search_device, format: :js, id: user.id %></th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= search.text_field :name_contains %></td>
+        <td><%= search.text_field :number_contains %></td>
+        <td><%= search.text_field :user_email_contains %></td>
+        <td>
+          <%= link_to '#', class: 'btn btn-info js-submit' do %>
+            <%= content_tag(:i, nil, class: 'icon-search icon-white') %>
+            Search
+          <% end %>
+        </td>
+      </tr>
+
+      <% devices.each do |device| %>
+        <tr>
+          <td><%= device.name %></td>
+          <td><%= device.number %></td>
+          <td><%= device.user.try(:email) %></td>
+          <td>
+            <% if device.user %>
+              <%= link_to remove_device_admin_user_path(device.user_id, format: :js), class: 'btn btn-danger btn-mini js-remove' do %>
+                <%= content_tag :i, nil, class: 'icon-minus icon-white' %>
+                Remove
+              <% end %>
+            <% else %>
+              <%= link_to change_device_admin_user_path(id: user.id, device_id: device.id, format: :js), class: 'btn btn-success btn-mini js-select' do %>
+                <%= content_tag :i, nil, class: 'icon-ok icon-white' %>
+                Select
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

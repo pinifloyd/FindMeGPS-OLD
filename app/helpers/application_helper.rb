@@ -2,16 +2,18 @@ module ApplicationHelper
 
   require "#{Rails.root}/lib/boot_strap_form_builder.rb"
 
-  def info_messages(type, options = {})
-    return unless flash[type]
-
+  def info_messages(options = {})
     if options[:close_button]
-      close_button = link_to('x', '#', class: 'close', :'data-dismiss' => 'alert')
+      close_button = link_to 'x', '#', class: 'close', :'data-dissmis' => 'alert'
     end
 
-    info_content = [ close_button, flash[type] ].join
+    content = flash.map do |type, message|
+      content_tag :div, class: 'alert alert-' + type.to_s do
+        [ close_button, message ].join.html_safe
+      end
+    end.join if flash
 
-    content_tag(:div, info_content.html_safe, class: 'alert alert-' + type.to_s)
+    content_tag :div, content.html_safe, class: 'info-messages-container'
   end
 
 end

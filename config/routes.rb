@@ -16,7 +16,11 @@ FindMeGps::Application.routes.draw do
   namespace :admin do
     resource  :welcome, only: :show
     resources :devices
-    resources :users
+    resources :users do
+      get :search_device, on: :collection
+      get :remove_device, on: :member
+      get :change_device, on: :member
+    end
   end
 
   namespace :api do
